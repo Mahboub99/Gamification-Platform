@@ -1,0 +1,177 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int       @id @default(autoincrement())
+  username          String    @unique @db.VarChar(50)
+  email             String    @unique @db.VarChar(100)
+  passwordHash      String    @map("password_hash") @db.VarChar(255)
+  firstName         String?   @map("first_name") @db.VarChar(50)
+  lastName          String?   @map("last_name") @db.VarChar(50)
+  avatarUrl         String?   @map("avatar_url") @db.VarChar(255)
+  experiencePoints  Int       @default(0) @map("experience_points")
+  currentLevel      Int       @default(1) @map("current_level")
+  totalBadges       Int       @default(0) @map("total_badges")
+  totalAchievements Int       @default(0) @map("total_achievements")
+  isAdmin           Boolean   @default(false) @map("is_admin")
+  isActive          Boolean   @default(true) @map("is_active")
+  lastLogin         DateTime? @map("last_login")
+  createdAt         DateTime  @default(now()) @map("created_at")
+  updatedAt         DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  userBadges        UserBadge[]
+  userActivities    UserActivity[]
+  userAchievements  UserAchievement[]
+  experienceLogs    ExperienceLog[]
+  awardedBadges     UserBadge[] @relation("BadgeAwarder")
+
+  @@map("users")
+}
+
+model Badge {
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(100)
+  description     String?
+  imageUrl        String?     @map("image_url") @db.VarChar(255)
+  criteriaType    String      @map("criteria_type") @db.VarChar(50)
+  criteriaValue   Int         @map("criteria_value")
+  experienceReward Int        @default(0) @map("experience_reward")
+  rarity          String      @default("common") @db.VarChar(20)
+  isActive        Boolean     @default(true) @map("is_active")
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  userBadges      UserBadge[]
+  levelRewards    Level[] @relation("LevelBadgeReward")
+  activityRewards Activity[] @relation("ActivityBadgeReward")
+  achievementRewards Achievement[] @relation("AchievementBadgeReward")
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  badgeId   Int      @map("badge_id")
+  awardedAt DateTime @default(now()) @map("awarded_at")
+  awardedBy Int?     @map("awarded_by")
+
+  // Relations
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge     Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+  awarder   User?    @relation("BadgeAwarder", fields: [awardedBy], references: [id])
+
+  @@unique([userId, badgeId])
+  @@map("user_badges")
+}
+
+model Level {
+  id               Int      @id @default(autoincrement())
+  levelNumber      Int      @unique @map("level_number")
+  name             String   @db.VarChar(100)
+  description      String?
+  experienceRequired Int    @map("experience_required")
+  badgeRewardId    Int?    @map("badge_reward_id")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  // Relations
+  badgeReward      Badge?   @relation("LevelBadgeReward", fields: [badgeRewardId], references: [id])
+
+  @@map("levels")
+}
+
+model Activity {
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(100)
+  description     String?
+  category        String?     @db.VarChar(50)
+  experienceReward Int        @default(0) @map("experience_reward")
+  badgeRewardId   Int?       @map("badge_reward_id")
+  isRepeatable    Boolean     @default(false) @map("is_repeatable")
+  isActive        Boolean     @default(true) @map("is_active")
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  userActivities  UserActivity[]
+  badgeReward     Badge?      @relation("ActivityBadgeReward", fields: [badgeRewardId], references: [id])
+
+  @@map("activities")
+}
+
+model UserActivity {
+  id              Int      @id @default(autoincrement())
+  userId          Int      @map("user_id")
+  activityId      Int      @map("activity_id")
+  completedAt     DateTime @default(now()) @map("completed_at")
+  experienceGained Int     @default(0) @map("experience_gained")
+
+  // Relations
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activity        Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, activityId])
+  @@map("user_activities")
+}
+
+model Achievement {
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(100)
+  description     String?
+  iconUrl         String?     @map("icon_url") @db.VarChar(255)
+  category        String?     @db.VarChar(50)
+  criteriaType    String      @map("criteria_type") @db.VarChar(50)
+  criteriaValue   Int         @map("criteria_value")
+  experienceReward Int        @default(0) @map("experience_reward")
+  badgeRewardId   Int?       @map("badge_reward_id")
+  isActive        Boolean     @default(true) @map("is_active")
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  userAchievements UserAchievement[]
+  badgeReward      Badge?           @relation("AchievementBadgeReward", fields: [badgeRewardId], references: [id])
+
+  @@map("achievements")
+}
+
+model UserAchievement {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @map("user_id")
+  achievementId Int     @map("achievement_id")
+  unlockedAt   DateTime @default(now()) @map("unlocked_at")
+
+  // Relations
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement  Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+  @@map("user_achievements")
+}
+
+model ExperienceLog {
+  id             Int      @id @default(autoincrement())
+  userId         Int      @map("user_id")
+  activityType   String   @map("activity_type") @db.VarChar(50)
+  activityId     Int?
+  experienceChange Int    @map("experience_change")
+  previousLevel  Int?     @map("previous_level")
+  newLevel       Int?     @map("new_level")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("experience_log")
+} 
