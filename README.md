@@ -43,7 +43,7 @@ A comprehensive gamification engine built with Node.js, React, and PostgreSQL. T
     email: 'user1@ejada.com',
     password: 'root123',
   ```
-## 📋 Table of Contents
+## Table of Contents
 
 - [Manual Setup](#manual-setup)
 - [Docker Setup](#docker-setup)
@@ -192,7 +192,6 @@ docker-run.bat status
 
 ## System Architecture
 
-
 ### Business Logic & Thinking Process
 
 The core of the gamification engine is designed to make user engagement both rewarding and dynamic. A point system lets users earn points for specific actions, such as completing tasks or participating in activities. As points accumulate, users unlock new levels, creating a sense of progression and achievement. Badges are awarded based on defined criteria, celebrating milestones and encouraging continued participation. Leaderboards introduce a competitive element, with rankings that can be updated daily, weekly, or monthly to keep things fresh and motivating.
@@ -206,6 +205,8 @@ Scalability is addressed through several strategies. Redis caching can be used f
 ### Reusable Modules
 
 To keep the architecture maintainable and extensible, several reusable modules can be introduced. The Badge Service manages badge creation, assignment, and validation. The Point Engine handles all point calculations and level progression logic. The Leaderboard Service generates and maintains competitive rankings, while the Notification Service sends alerts for achievements and milestones. An Analytics Service tracks user engagement and overall system performance, providing valuable insights for continuous improvement.
+
+--- 
 
 ## Database Design
 
