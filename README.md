@@ -89,7 +89,7 @@ REDIS_URL=redis://localhost:6379
 LOG_LEVEL=debug
 
 # API Configuration
-API_PREFIX=/api/v1
+API_PREFIX=/api
 RATE_LIMIT_WINDOW_MS=900000
 RATE_LIMIT_MAX_REQUESTS=100
 
@@ -131,7 +131,7 @@ npm start
 
 # API Documentation
 # Swagger UI: http://localhost:8000/api-docs
-# API Base URL: http://localhost:8000/api/v1
+# API Base URL: http://localhost:8000/api
 ```
 
 #### 3. Frontend Setup
@@ -224,7 +224,7 @@ To keep the architecture maintainable and extensible, several reusable modules c
 ### API Documentation
 
 **Swagger UI**: http://localhost:8000/api-docs  
-**API Base URL**: http://localhost:8000/api/v1
+**API Base URL**: http://localhost:8000/api
 
 ### swagger 
   ![Image](./images/API.png)
@@ -232,51 +232,51 @@ To keep the architecture maintainable and extensible, several reusable modules c
 ### Authentication Endpoints
 
 ```
-POST   /api/v1/auth/register     - Register new user
-POST   /api/v1/auth/login        - User login
-POST   /api/v1/auth/logout       - User logout
-GET    /api/v1/auth/profile      - Get user profile
-PUT    /api/v1/auth/profile      - Update user profile
+POST   /api/auth/register     - Register new user
+POST   /api/auth/login        - User login
+POST   /api/auth/logout       - User logout
+GET    /api/auth/profile      - Get user profile
+PUT    /api/auth/profile      - Update user profile
 ```
 
 ### User Management
 
 ```
-GET    /api/v1/users             - Get all users (admin)
-GET    /api/v1/users/:id         - Get user by ID
-PUT    /api/v1/users/:id         - Update user
-DELETE /api/v1/users/:id         - Delete user (admin)
+GET    /api/users             - Get all users (admin)
+GET    /api/users/:id         - Get user by ID
+PUT    /api/users/:id         - Update user
+DELETE /api/users/:id         - Delete user (admin)
 ```
 
 ### Gamification Endpoints
 
 ```
-POST   /api/v1/actions/complete  - Complete an action
-GET    /api/v1/actions           - Get all actions
-GET    /api/v1/badges            - Get all badges
-GET    /api/v1/badges/:id        - Get badge details
-GET    /api/v1/levels            - Get all levels
-GET    /api/v1/leaderboard       - Get leaderboard
+POST   /api/actions/complete  - Complete an action
+GET    /api/actions           - Get all actions
+GET    /api/badges            - Get all badges
+GET    /api/badges/:id        - Get badge details
+GET    /api/levels            - Get all levels
+GET    /api/leaderboard       - Get leaderboard
 ```
 
 ### Points & Progress
 
 ```
-GET    /api/v1/users/:id/points  - Get user points history
-GET    /api/v1/users/:id/badges  - Get user badges
-GET    /api/v1/users/:id/level   - Get user level info
-POST   /api/v1/points/award      - Award points to user
+GET    /api/users/:id/points  - Get user points history
+GET    /api/users/:id/badges  - Get user badges
+GET    /api/users/:id/level   - Get user level info
+POST   /api/points/award      - Award points to user
 ```
 
 ### Admin Endpoints
 
 ```
-POST   /api/v1/admin/badges      - Create new badge
-PUT    /api/v1/admin/badges/:id  - Update badge
-DELETE /api/v1/admin/badges/:id  - Delete badge
-POST   /api/v1/admin/actions     - Create new action
-PUT    /api/v1/admin/actions/:id - Update action
-DELETE /api/v1/admin/actions/:id - Delete action
+POST   /api/admin/badges      - Create new badge
+PUT    /api/admin/badges/:id  - Update badge
+DELETE /api/admin/badges/:id  - Delete badge
+POST   /api/admin/actions     - Create new action
+PUT    /api/admin/actions/:id - Update action
+DELETE /api/admin/actions/:id - Delete action
 ```
 
 ### Error Handling
