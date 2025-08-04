@@ -1,11 +1,11 @@
 <div align="center">
 <a href="https://github.com/Mahboub99/Gamification-Platform" rel="noopener">
   
-  <img width="700" alt="Gamification Platform" src="./Gamification-Platform.png">
+  <img width="700" alt="Gamification Platform" src="./images/Gamification-Platform.png">
 
 </div>
 
-<h2 align="center">🎮 Gamification Platform</h2>
+<h2 align="center"> Gamification Platform</h2>
 
 <div align="center">
 
@@ -211,9 +211,9 @@ To keep the architecture maintainable and extensible, several reusable modules c
 ### Entity Relationship Diagram
 
 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473838902-7fc8368d-2234-4a16-9c35-4180364629b9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T014530Z&X-Amz-Expires=300&X-Amz-Signature=be4d7a042c888a06ade1a71da25ab8f87575cb0ce5c3555eefc71a69d2d4650f&X-Amz-SignedHeaders=host)
+  ![Image](./images/simple_db.png)
 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473839567-548ea36b-87b8-43b9-b62e-8e2643072a12.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T014953Z&X-Amz-Expires=300&X-Amz-Signature=a618ebf614f8be046e05aa0b5635367d6edf4acbcfda32b4fe69280d69643a72&X-Amz-SignedHeaders=host)
+  ![Image](./images/real_db.png)
 
 
 ## 🔌 Backend API
@@ -224,7 +224,7 @@ To keep the architecture maintainable and extensible, several reusable modules c
 **API Base URL**: http://localhost:8000/api/v1
 
 ### swagger 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473840686-71a2cc0c-af5b-4eac-9ffa-37d9ecfda179.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T015631Z&X-Amz-Expires=300&X-Amz-Signature=360a050937a3971a0d97f4c2f3b00cd069da0b58d25cb8ab9c62eeec4e895358&X-Amz-SignedHeaders=host)
+  ![Image](./images/API.png)
 
 ### Authentication Endpoints
 
@@ -294,48 +294,48 @@ The API uses standard HTTP status codes and returns consistent error responses:
 }
 ```
 
-## 🎨 Frontend Features
+## Frontend Features
 
 ### Dashboard Overview
 
 The frontend provides a comprehensive admin/user dashboard with the following features:
 
 #### **login** 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473841088-112740c3-be34-47b3-9cbf-2066b3d4d076.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T020044Z&X-Amz-Expires=300&X-Amz-Signature=fb1a29c6e39a33755f81d6199f3137ac818e180f94c6a8738358c200fa4bfc39&X-Amz-SignedHeaders=host)
+  ![Image](./images/login.png)
 
 #### **Analytics Dashboard**
 
   #### user 
 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473841095-0a7e9400-7fdb-4e4b-ba17-883db4d42e00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T020139Z&X-Amz-Expires=300&X-Amz-Signature=fc09fcc69f7df83c48f0b9b196de10940a6e4ba6e55c8e23dfdddf2403ed388c&X-Amz-SignedHeaders=host)
+  ![Image](./images/user_dash.png)
 
   #### admin 
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473845419-7c59fbb4-611a-49d1-b764-c3e6d005af6c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T022420Z&X-Amz-Expires=300&X-Amz-Signature=83cfd14066c51bd63d59491e0ddeefab7c047cb89e7b87ee320a5049e41f34c6&X-Amz-SignedHeaders=host)
+  ![Image](./images/admin_dash.png)
 
 
 #### **Leaderboard System**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473844798-ffa8eba0-0a53-4e78-bf0f-4e1de3d18bb7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T022102Z&X-Amz-Expires=300&X-Amz-Signature=f7ff31e46d95e5b62b3cfa475630a8640b8571a68a6d0fb40fa522e67a242729&X-Amz-SignedHeaders=host)
+  ![Image](./images/leader.png)
 
 #### **Activity Tracking**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473845829-3aad26d5-86ee-4d7d-9e70-0f8942e4112d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T022633Z&X-Amz-Expires=300&X-Amz-Signature=bf9503785d56563338dd01aa5dfab6e8782730bae35c87d049911d448a9df6ca&X-Amz-SignedHeaders=host)
+  ![Image](./images/activity.png)
 
 
 #### **Badge Management**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473848314-e3ee6e55-08d6-4986-87b9-9342a754cc6b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T023852Z&X-Amz-Expires=300&X-Amz-Signature=3453a8f8d7b4ddcfdd481bdbe64a2dcf9657a41337d93e5fec7fc9f555fa013f&X-Amz-SignedHeaders=host)
+  ![Image](./images/badge.png)
 
 #### **Achievement Management**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473848775-baea9d18-c546-42db-a6e4-9f378e53d47b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T024054Z&X-Amz-Expires=300&X-Amz-Signature=ae7055eb1ce1a890daf24d6128bdda65c0e3bf45f6cc187cef8f386acdd11e52&X-Amz-SignedHeaders=host)
+  ![Image](./images/achivement.png)
 
 
 #### **Level Management**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473849287-dd691fa7-4882-4235-b0a1-4a4c229ef257.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T024349Z&X-Amz-Expires=300&X-Amz-Signature=acc7b2de86d27d3db42a97b779be33409a79675c9347e12c774e5edeed3eb67d&X-Amz-SignedHeaders=host)
+  ![Image](./images/level.png)
 
 
 #### **Users  Management**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473849589-417dbef7-c6b6-4120-b5d2-ad71fbceb5a9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T024542Z&X-Amz-Expires=300&X-Amz-Signature=ed78c87993e4052d90d0773fd83fcbdf412a37987aba27d4f98636ab72e6c28f&X-Amz-SignedHeaders=host)
+  ![Image](./images/users.png)
 
 #### **User Profile Page**
-  ![Image](https://github-production-user-asset-6210df.s3.amazonaws.com/43186742/473850673-f200e889-b9b2-426f-9091-8a022ef3f95c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250804T025131Z&X-Amz-Expires=300&X-Amz-Signature=9fe78f8c929fc864e65029557e0ad3d5a1ccba336403969bce6a5633113ec332&X-Amz-SignedHeaders=host)
+  ![Image](./images/profile.png)
 
 
 ---
