@@ -47,8 +47,8 @@ A comprehensive gamification engine built with Node.js, React, and PostgreSQL. T
 
 - [Manual Setup](#manual-setup)
 - [Docker Setup](#docker-setup)
-- [System Architecture](#️system-architecture)
-- [Database Design](#️database-design)
+- [System Architecture](#system-architecture)
+- [Database Design](database-design)
 - [Backend API](#backend-api)
 - [Frontend Features](#frontend-features)
 - [Task Structure](#task-structure)
