@@ -189,6 +189,7 @@ docker-run.bat status
 ```
 
 ---
+
 ## System Architecture
 
 
@@ -215,8 +216,9 @@ To keep the architecture maintainable and extensible, several reusable modules c
 
   ![Image](./images/real_db.png)
 
+--- 
 
-##Backend API
+## Backend Api
 
 ### API Documentation
 
@@ -340,7 +342,7 @@ The frontend provides a comprehensive admin/user dashboard with the following fe
 
 ---
 
-##  Task Structure & Implementation Guide
+##  Task Structure
 
 ### **Section 1: Leadership & System Design**
 
