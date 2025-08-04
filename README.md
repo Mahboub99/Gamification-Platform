@@ -229,56 +229,6 @@ To keep the architecture maintainable and extensible, several reusable modules c
 ### swagger 
   ![Image](./images/API.png)
 
-### Authentication Endpoints
-
-```
-POST   /api/auth/register     - Register new user
-POST   /api/auth/login        - User login
-POST   /api/auth/logout       - User logout
-GET    /api/auth/profile      - Get user profile
-PUT    /api/auth/profile      - Update user profile
-```
-
-### User Management
-
-```
-GET    /api/users             - Get all users (admin)
-GET    /api/users/:id         - Get user by ID
-PUT    /api/users/:id         - Update user
-DELETE /api/users/:id         - Delete user (admin)
-```
-
-### Gamification Endpoints
-
-```
-POST   /api/actions/complete  - Complete an action
-GET    /api/actions           - Get all actions
-GET    /api/badges            - Get all badges
-GET    /api/badges/:id        - Get badge details
-GET    /api/levels            - Get all levels
-GET    /api/leaderboard       - Get leaderboard
-```
-
-### Points & Progress
-
-```
-GET    /api/users/:id/points  - Get user points history
-GET    /api/users/:id/badges  - Get user badges
-GET    /api/users/:id/level   - Get user level info
-POST   /api/points/award      - Award points to user
-```
-
-### Admin Endpoints
-
-```
-POST   /api/admin/badges      - Create new badge
-PUT    /api/admin/badges/:id  - Update badge
-DELETE /api/admin/badges/:id  - Delete badge
-POST   /api/admin/actions     - Create new action
-PUT    /api/admin/actions/:id - Update action
-DELETE /api/admin/actions/:id - Delete action
-```
-
 ### Error Handling
 
 The API uses standard HTTP status codes and returns consistent error responses:
