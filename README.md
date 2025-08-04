@@ -216,7 +216,7 @@ To keep the architecture maintainable and extensible, several reusable modules c
   ![Image](./images/real_db.png)
 
 
-## 🔌 Backend API
+##Backend API
 
 ### API Documentation
 
